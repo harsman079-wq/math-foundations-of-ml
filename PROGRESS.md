@@ -10,11 +10,15 @@ Tracking concrete, verifiable milestones only (not conversation, only working ar
 - [x] First working trajectory: SGD on bowl, (3,4) -> (0,0), 40 steps, plotted and verified
 
 ## Week 2-3 (in progress)
-- [ ] Momentum optimizer
-- [ ] RMSProp optimizer
-- [ ] Adam optimizer
-- [ ] Run all 4 optimizers on all 3 surfaces (systematic sweep, not just bowl)
-- [ ] Saddle-escape metric: steps-to-escape, averaged across multiple runs/learning rates
+- [x] Momentum optimizer implemented (velocity-based update)
+- [x] RMSProp optimizer implemented (squared-gradient scaling)
+- [x] Adam optimizer implemented (momentum + RMSProp combined, bias-corrected)
+- [x] All 4 optimizers verified converging correctly on the bowl
+- [x] All 4 optimizers compared on the saddle point — RMSProp/Adam escape fastest,
+      matching literature; Momentum escapes slowest (new observation, worth reporting)
+- [ ] Run systematic sweep: multiple starting points + learning rates, not just one each
+- [ ] Saddle-escape metric: averaged steps-to-escape across many runs (mean ± std)
+- [ ] Run all 4 optimizers on Rosenbrock surface
 - [ ] Results table: optimizer x surface x learning_rate -> steps, final loss
 
 ## Week 4 (not started)
